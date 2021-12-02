@@ -1,10 +1,12 @@
 # Spotify API Connection using Next.js
 
+<!-- ![project's preview](https://localhost:3000/preview.png) -->
+
 Project details and explanations are not available yet. Planned to working on it soon!
 
-## Learn More
+## References
 
-To learn more about Next.js, take a look at the following resources:
+To learn more about this Next.js, take a look at the following resources:
 
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [GitHub repo: @theodorusclarence](https://github.com/theodorusclarence/now-playing-spotify/blob/main/.env.example) - source code reference.
