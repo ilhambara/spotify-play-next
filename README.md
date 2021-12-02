@@ -1,8 +1,8 @@
 # Spotify API Connection using Next.js
 
-<!-- ![project's preview](https://localhost:3000/preview.png) -->
+![project's preview](https://raw.githubusercontent.com/ilhambara/spotify-play-next/main/public/preview.png)
 
-Project details and explanations are not available yet. Planned to working on it soon!
+Project details and explanations are not available yet. Planned to working on it soon! 👀⏳
 
 ## References
 
