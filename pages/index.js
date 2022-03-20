@@ -28,7 +28,7 @@ export default function Home() {
         </p>
 
         <div className={styles.grid}>
-          <h2 className={styles.card__title}>Online Status:</h2>
+          <h2 className={styles.card__title}>Status:</h2>
           <a
             href={
               data?.isPlaying
@@ -56,18 +56,6 @@ export default function Home() {
             <div className={styles.info}>
               <h2>{data?.isPlaying ? data.title : "Currently offline"}</h2>
               <p>{data?.isPlaying ? data.artist : "Spotify"}</p>
-            </div>
-          </a>
-
-          <h2 className={styles.card__title}>Offline Status (example):</h2>
-          <a className={styles.card}>
-            <div className={styles.box}>
-              <SiSpotify size={64} color={"#1db954"} />
-            </div>
-
-            <div className={styles.info}>
-              <h2>{"Currently offline"}</h2>
-              <p>{"Spotify"}</p>
             </div>
           </a>
         </div>
