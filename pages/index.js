@@ -1,18 +1,14 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import { SiSpotify } from "react-icons/si";
+import useSWR from "swr";
 
-export const getStaticProps = async () => {
-  const res = await fetch("http://localhost:3000/api/spotify");
-  const data = await res.json();
+export default function Home() {
+  const fetcher = (url) => fetch(url).then((r) => r.json());
+  const { data } = useSWR("/api/spotify", fetcher);
 
-  return {
-    props: { spotify: data },
-    revalidate: 1,
-  };
-};
+  console.log(data);
 
-export default function Home({ spotify }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -35,8 +31,8 @@ export default function Home({ spotify }) {
           <h2>Online Status:</h2>
           <a
             href={
-              spotify?.isPlaying
-                ? spotify.songUrl
+              data?.isPlaying
+                ? data.songUrl
                 : "https://open.spotify.com/user/31mfhvof7jt4iunmo5sbs7xk3nye?si=62f0a47200fb49fb"
             }
             target="_blank"
@@ -44,12 +40,12 @@ export default function Home({ spotify }) {
             className={styles.card}
           >
             <div className={styles.box}>
-              {spotify?.isPlaying ? (
+              {data?.isPlaying ? (
                 // eslint-disable-next-line @next/next/no-img-element
                 <img
                   className={styles.image}
-                  src={spotify?.albumImageUrl}
-                  alt={spotify?.album}
+                  src={data?.albumImageUrl}
+                  alt={data?.album}
                   width="72px"
                 />
               ) : (
@@ -58,10 +54,8 @@ export default function Home({ spotify }) {
             </div>
 
             <div className={styles.info}>
-              <h2>
-                {spotify?.isPlaying ? spotify.title : "Currently offline"}
-              </h2>
-              <p>{spotify?.isPlaying ? spotify.artist : "Spotify"}</p>
+              <h2>{data?.isPlaying ? data.title : "Currently offline"}</h2>
+              <p>{data?.isPlaying ? data.artist : "Spotify"}</p>
             </div>
           </a>
 
