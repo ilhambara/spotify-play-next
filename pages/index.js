@@ -1,5 +1,5 @@
 import Head from "next/head";
-import styles from "../styles/Home.module.css";
+import * as styles from "../styles/Home.module.css";
 import { SiSpotify } from "react-icons/si";
 import useSWR from "swr";
 
@@ -23,12 +23,12 @@ export default function Home() {
         </h1>
 
         <p className={styles.description}>
-          Display Spotify {"Currently Playing"} Status From It{"'"}s Official
+          Display Spotify {"Currently Playing"} Activity From It{"'"}s Official
           API.
         </p>
 
         <div className={styles.grid}>
-          <h2>Online Status:</h2>
+          <h2 className={styles.card__title}>Online Status:</h2>
           <a
             href={
               data?.isPlaying
@@ -46,10 +46,10 @@ export default function Home() {
                   className={styles.image}
                   src={data?.albumImageUrl}
                   alt={data?.album}
-                  width="72px"
+                  width="64"
                 />
               ) : (
-                <SiSpotify size={64} color={"#1ED760"} />
+                <SiSpotify size={64} color={"#1db954"} />
               )}
             </div>
 
@@ -59,10 +59,10 @@ export default function Home() {
             </div>
           </a>
 
-          <h2>Offline Status:</h2>
+          <h2 className={styles.card__title}>Offline Status (example):</h2>
           <a className={styles.card}>
             <div className={styles.box}>
-              <SiSpotify size={72} color={"#1ED760"} />
+              <SiSpotify size={64} color={"#1db954"} />
             </div>
 
             <div className={styles.info}>
@@ -79,8 +79,7 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Made in {"🚀"}
-          <strong>{"@ilhambara"}</strong>
+          Made in 🚀 by <b>@ilhambara</b>
         </a>
       </footer>
     </div>
